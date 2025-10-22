@@ -29,6 +29,8 @@ coverage/
 *.ntvs*
 *.njsproj
 *.sln
+test/
+test/unit/
 
 # Mac / Linux
 .DS_Store
