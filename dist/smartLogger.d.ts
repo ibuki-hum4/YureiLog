@@ -1,0 +1,72 @@
+export type Level = 'error' | 'warn' | 'info' | 'debug';
+export interface RotationOptions {
+    size: number;
+    maxFiles?: number;
+}
+export interface RemoteOptions {
+    url: string;
+    intervalMs?: number;
+    batchSize?: number;
+    headers?: Record<string, string>;
+    timeoutMs?: number;
+    maxBuffer?: number;
+}
+export interface SmartLoggerOptions {
+    level?: Level;
+    env?: string;
+    label?: string;
+    colors?: boolean;
+    json?: boolean;
+    file?: string;
+    rotation?: RotationOptions | null;
+    remote?: RemoteOptions | null;
+    timeZone?: string;
+    remoteReliable?: boolean;
+    remoteQueuePath?: string;
+    remoteGzip?: boolean;
+}
+export default class SmartLogger {
+    private levels;
+    private level;
+    private env;
+    private label;
+    private useColors;
+    private json;
+    private file;
+    private rotation;
+    private stream;
+    private colorMap;
+    private remote;
+    private remoteReliable;
+    private remoteQueuePath;
+    private remoteGzip;
+    private remoteHeaders;
+    private remoteBuffer;
+    private remoteTimer;
+    private remoteIntervalMs;
+    private remoteBatchSize;
+    private _remoteFailCount;
+    private timeZone;
+    constructor(options?: SmartLoggerOptions);
+    setLevel(levelStr: Level): void;
+    private _shouldLog;
+    private _timestamp;
+    private _openLogStream;
+    private _writeToConsole;
+    private _format;
+    private _writeToFile;
+    private _prepareMessage;
+    log(level: Level, msg: any, ...args: any[]): void;
+    info(msg: any, ...args: any[]): void;
+    warn(msg: any, ...args: any[]): void;
+    error(msg: any, ...args: any[]): void;
+    debug(msg: any, ...args: any[]): void;
+    child(overrides?: Partial<SmartLoggerOptions>): SmartLogger;
+    close(): void;
+    private _rotateIfNeeded;
+    private _startRemoteTimer;
+    private _enqueueRemote;
+    private _flushRemote;
+    private _flushPersistentQueue;
+    flushRemote(): Promise<void>;
+}
