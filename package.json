@@ -43,7 +43,14 @@
   },
   "scripts": {
     "test": "jest --runInBand",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "preflight": "node ./scripts/check-preflight.js",
+    "release:local": "node ./scripts/publish-local.js",
+    "release:ps": "powershell -File ./scripts/publish-local.ps1",
+    "release": "node ./scripts/release-local.js",
+    "release:dry": "npm pack --dry-run"
   },
   "dependencies": {
     "undici-types": "^5.26.5"

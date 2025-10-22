@@ -117,3 +117,28 @@ A: 現状は簡易的な JSONL ファイルへの追記／読み取りで永続�
 ---
 
 この README はリリース前にさらに整備できます（例: API の詳細な型定義、追加の使用例、ベストプラクティス）。次に追加してほしいセクションがあれば教えてください。
+
+## ローカルからの安全な公開手順（GitHub Actions を使わない）
+
+ローカル環境だけで公開したい場合は、npm のトークンを環境変数 `NPM_TOKEN` に設定する方法が便利で安全です。手順:
+
+PowerShell の場合（推奨）:
+
+```powershell
+$env:NPM_TOKEN = '<your-npm-token-here>'
+npm run release:ps
+```
+
+Node スクリプト経由（クロスプラットフォーム）:
+
+```powershell
+setx NPM_TOKEN "<your-npm-token-here>"; npm run release:local
+```
+
+インタラクティブにログインしたい場合は:
+
+```powershell
+npm run preflight; npm login; npm publish --access public
+```
+
+注: スクリプトは一時的に `~/.npmrc` にトークンを埋め込み、公開後に自動で削除します。公開前に `package.json` の `name` と `version` を再確認してください。
