@@ -1,6 +1,6 @@
 {
-  "name": "smartlogger",
-  "version": "0.1.1",
+  "name": "@ibuki-hum4/yureilog.js",
+  "version": "0.1.2",
   "description": "A small smart logger with rotation and remote batching",
   "keywords": [
     "logger",
