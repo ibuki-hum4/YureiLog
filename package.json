@@ -8,13 +8,13 @@
     "rotation",
     "node"
   ],
-  "homepage": "https://github.com/ibuki-hum4/smartlogger#readme",
+  "homepage": "https://github.com/ibuki-hum4/YureiLog#readme",
   "bugs": {
-    "url": "https://github.com/ibuki-hum4/smartlogger/issues"
+    "url": "https://github.com/ibuki-hum4/YureiLog/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibuki-hum4/smartlogger.git"
+    "url": "git+https://github.com/ibuki-hum4/YureiLog.git"
   },
   "license": "MIT",
   "author": "",

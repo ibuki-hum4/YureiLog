@@ -1,4 +1,4 @@
-# smartLogger
+# YureiLog.js
 
 軽量で設定しやすい Node.js 向けロガー。タイムスタンプ・ラベル・色分けを自動で付与し、ファイルローテーション、リモートバッチ送信、JSON 出力などの便利な機能を備えます。
 
@@ -16,13 +16,13 @@
 インストール（プロジェクトに追加）:
 
 ```powershell
-npm install smartlogger
+npm install @ibuki-hum4/yureilog.js
 ```
 
 CommonJS での使い方:
 
 ```js
-const SmartLogger = require('smartlogger');
+const SmartLogger = require('@ibuki-hum4/yureilog.js');
 const logger = new SmartLogger({ level: 'info', label: 'MyApp' });
 logger.info('hello world');
 ```
@@ -30,7 +30,7 @@ logger.info('hello world');
 ESM（import）での使い方:
 
 ```js
-import SmartLogger from 'smartlogger';
+import SmartLogger from '@ibuki-hum4/yureilog.js';
 const logger = new SmartLogger({ label: 'ESM' });
 logger.info('hello esm');
 ```
