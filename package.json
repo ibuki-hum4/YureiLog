@@ -50,7 +50,10 @@
     "release:local": "node ./scripts/publish-local.js",
     "release:ps": "powershell -File ./scripts/publish-local.ps1",
     "release": "node ./scripts/release-local.js",
-    "release:dry": "npm pack --dry-run"
+    "release:dry": "npm pack --dry-run",
+    "bench": "node ./scripts/bench.js",
+    "test:direct": "node ./scripts/run-tests.js",
+    "test:ps": "powershell -File ./scripts/run-tests.ps1"
   },
   "dependencies": {
     "undici-types": "^5.26.5"

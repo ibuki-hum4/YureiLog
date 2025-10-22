@@ -19,6 +19,10 @@ export interface SmartLoggerOptions {
     json?: boolean;
     file?: string;
     rotation?: RotationOptions | null;
+    files?: Partial<Record<Level, string>>;
+    bufferFlushIntervalMs?: number;
+    bufferMaxSize?: number;
+    pretty?: boolean;
     remote?: RemoteOptions | null;
     timeZone?: string;
     remoteReliable?: boolean;
@@ -35,6 +39,14 @@ export default class SmartLogger {
     private file;
     private rotation;
     private stream;
+    private _streamBytesWritten;
+    private _bufferMap;
+    private _bufferFlushTimer;
+    private _bufferFlushIntervalMs;
+    private _bufferMaxSize;
+    private _fileStreams;
+    private filesMap;
+    private pretty;
     private colorMap;
     private remote;
     private remoteReliable;
@@ -47,7 +59,11 @@ export default class SmartLogger {
     private remoteBatchSize;
     private _remoteFailCount;
     private timeZone;
+    setTheme(colors: boolean, customMap?: Record<string, string>): void;
     constructor(options?: SmartLoggerOptions);
+    private _startBufferFlushTimer;
+    private _stopBufferFlushTimer;
+    private _getStreamForFile;
     setLevel(levelStr: Level): void;
     private _shouldLog;
     private _timestamp;
@@ -55,6 +71,8 @@ export default class SmartLogger {
     private _writeToConsole;
     private _format;
     private _writeToFile;
+    private _flushBuffersFor;
+    private _flushBuffers;
     private _prepareMessage;
     log(level: Level, msg: any, ...args: any[]): void;
     info(msg: any, ...args: any[]): void;

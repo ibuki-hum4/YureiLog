@@ -1,0 +1,14 @@
+node_modules/
+logs/
+bench/
+test/
+src/
+.vscode/
+.github/
+scripts/
+*.log
+*.local
+*.ps1
+tsconfig.json
+jest.config.cjs
+package-lock.json
