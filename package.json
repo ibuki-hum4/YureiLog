@@ -1,5 +1,5 @@
 {
-  "name": "@ibuki-hum4/yureilog.js",
+  "name": "@ya-hari/yureilog.js",
   "version": "0.1.2",
   "description": "A small smart logger with rotation and remote batching",
   "keywords": [
@@ -10,11 +10,11 @@
   ],
   "homepage": "https://github.com/ibuki-hum4/YureiLog#readme",
   "bugs": {
-    "url": "https://github.com/ibuki-hum4/YureiLog/issues"
+  "url": "https://github.com/ibuki-hum4/YureiLog/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibuki-hum4/YureiLog.git"
+  "url": "git+https://github.com/ibuki-hum4/YureiLog.git"
   },
   "license": "MIT",
   "author": "",

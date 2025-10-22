@@ -1,4 +1,4 @@
-declare module '@ibuki-hum4/yureilog.js' {
+declare module '@ya-hari/yureilog.js' {
   export interface RotationOptions { size: number; maxFiles?: number }
   export interface RemoteOptions { url: string; intervalMs?: number; batchSize?: number; headers?: Record<string,string>; timeoutMs?: number; maxBuffer?: number }
   export interface SmartLoggerOptions {

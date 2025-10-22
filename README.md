@@ -16,13 +16,13 @@
 インストール（プロジェクトに追加）:
 
 ```powershell
-npm install @ibuki-hum4/yureilog.js
+npm install @ya-hari/yureilog.js
 ```
 
 CommonJS での使い方:
 
 ```js
-const SmartLogger = require('@ibuki-hum4/yureilog.js');
+const SmartLogger = require('@ya-hari/yureilog.js');
 const logger = new SmartLogger({ level: 'info', label: 'MyApp' });
 logger.info('hello world');
 ```
@@ -30,7 +30,7 @@ logger.info('hello world');
 ESM（import）での使い方:
 
 ```js
-import SmartLogger from '@ibuki-hum4/yureilog.js';
+import SmartLogger from '@ya-hari/yureilog.js';
 const logger = new SmartLogger({ label: 'ESM' });
 logger.info('hello esm');
 ```
